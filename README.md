@@ -100,5 +100,8 @@ npm run build     # type-check and bundle to dist/ with ncc (commit dist/)
 ## Tech stack
 TypeScript · Node.js 20 · Claude API (Anthropic SDK) · GitHub Actions toolkit · Octokit · Jest · ncc
 
+## Author
+**Surendra Challagundla** · [GitHub](https://github.com/surendrachallagundla301) · [LinkedIn](https://linkedin.com/in/surendra-challagundla-774182248)
+
 ## License
 MIT

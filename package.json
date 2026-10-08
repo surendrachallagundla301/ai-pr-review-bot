@@ -2,6 +2,7 @@
   "name": "ai-pr-review-bot",
   "version": "0.1.0",
   "description": "GitHub Action that reviews pull requests against a team rulebook using the Claude API",
+  "author": "Surendra Challagundla <surendra.challagundla23@gmail.com>",
   "main": "dist/index.js",
   "private": true,
   "scripts": {
