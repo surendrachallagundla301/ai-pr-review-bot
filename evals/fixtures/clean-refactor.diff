@@ -1,0 +1,12 @@
+diff --git a/src/format.ts b/src/format.ts
+--- a/src/format.ts
++++ b/src/format.ts
+@@ -1,3 +1,6 @@
+-export function fmt(n: number): string {
+-  return '$' + n.toFixed(2);
++const CURRENCY_DECIMALS = 2;
++
++/** Formats a dollar amount, e.g. 3.5 -> "$3.50". */
++export function formatCurrency(amount: number): string {
++  return `$${amount.toFixed(CURRENCY_DECIMALS)}`;
+ }

@@ -1,0 +1,11 @@
+diff --git a/src/main/java/app/UserRepository.java b/src/main/java/app/UserRepository.java
+--- a/src/main/java/app/UserRepository.java
++++ b/src/main/java/app/UserRepository.java
+@@ -18,3 +18,7 @@ public class UserRepository {
+     private final JdbcTemplate jdbc;
+ 
++    public User findByEmail(String email) {
++        String sql = "SELECT * FROM users WHERE email = '" + email + "'";
++        return jdbc.queryForObject(sql, new UserRowMapper());
++    }
+ }

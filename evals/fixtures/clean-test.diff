@@ -1,0 +1,11 @@
+diff --git a/test/format.test.ts b/test/format.test.ts
+--- a/test/format.test.ts
++++ b/test/format.test.ts
+@@ -0,0 +1,7 @@
++import { formatCurrency } from '../src/format';
++
++describe('formatCurrency', () => {
++  it('pads to two decimals', () => {
++    expect(formatCurrency(3.5)).toBe('$3.50');
++  });
++});

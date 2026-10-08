@@ -1,0 +1,43 @@
+name: AI Pull-Request Review Bot
+description: Reviews pull requests against your team rulebook with the Claude API and posts inline comments.
+author: Surendra Challagundla
+branding:
+  icon: check-circle
+  color: blue
+
+inputs:
+  anthropic-api-key:
+    description: Anthropic API key. Store it as a repository secret.
+    required: true
+  github-token:
+    description: Token used to read the diff and post the review.
+    required: false
+    default: ${{ github.token }}
+  model:
+    description: Claude model to use.
+    required: false
+    default: claude-sonnet-5-5
+  rulebook-path:
+    description: Markdown file with your team's review rules. Falls back to a built-in default.
+    required: false
+    default: .github/review-rules.md
+  min-severity:
+    description: Lowest severity to post (high, medium or low).
+    required: false
+    default: medium
+  max-comments:
+    description: Maximum number of inline comments per review.
+    required: false
+    default: "10"
+  max-diff-chars:
+    description: Largest amount of diff text sent to the model.
+    required: false
+    default: "60000"
+
+outputs:
+  findings:
+    description: Number of findings posted.
+
+runs:
+  using: node20
+  main: dist/index.js

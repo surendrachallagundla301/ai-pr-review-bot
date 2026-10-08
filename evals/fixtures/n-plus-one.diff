@@ -1,0 +1,14 @@
+diff --git a/src/main/java/app/ReportService.java b/src/main/java/app/ReportService.java
+--- a/src/main/java/app/ReportService.java
++++ b/src/main/java/app/ReportService.java
+@@ -12,2 +12,10 @@ public class ReportService {
+ 
++    public List<OrderSummary> summaries(List<Long> orderIds) {
++        List<OrderSummary> result = new ArrayList<>();
++        for (Long id : orderIds) {
++            Order order = orderRepository.findById(id).orElseThrow();
++            result.add(new OrderSummary(order.getId(), order.getTotal()));
++        }
++        return result;
++    }
+ }

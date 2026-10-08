@@ -1,0 +1,8 @@
+{
+  "sql-injection.diff": [{ "file": "src/main/java/app/UserRepository.java", "line": 21, "category": "security" }],
+  "phi-logging.diff": [{ "file": "src/main/java/app/ClaimService.java", "line": 31, "category": "security" }],
+  "n-plus-one.diff": [{ "file": "src/main/java/app/ReportService.java", "line": 16, "category": "performance" }],
+  "swallowed-exception.diff": [{ "file": "src/payments.ts", "line": 9, "category": "correctness" }],
+  "clean-refactor.diff": [],
+  "clean-test.diff": []
+}

@@ -1,0 +1,12 @@
+diff --git a/src/main/java/app/ClaimService.java b/src/main/java/app/ClaimService.java
+--- a/src/main/java/app/ClaimService.java
++++ b/src/main/java/app/ClaimService.java
+@@ -30,4 +30,8 @@ public class ClaimService {
+     public Claim submit(Claim claim) {
++        log.info("Submitting claim for patient {} dob {} member {}",
++                claim.getPatientName(), claim.getDateOfBirth(), claim.getMemberId());
+         validator.validate(claim);
++        Claim saved = repository.save(claim);
++        log.info("Saved claim {}", saved.getId());
+         return saved;
+     }

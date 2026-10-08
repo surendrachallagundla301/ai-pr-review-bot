@@ -1,0 +1,13 @@
+diff --git a/src/payments.ts b/src/payments.ts
+--- a/src/payments.ts
++++ b/src/payments.ts
+@@ -5,3 +5,11 @@ import { gateway } from './gateway';
+ 
++export async function refund(paymentId: string, amount: number): Promise<boolean> {
++  try {
++    await gateway.refund(paymentId, amount);
++  } catch (e) {
++    // ignore
++  }
++  return true;
++}
